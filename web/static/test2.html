@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+  <div class="" style="height: 100vh;"></div>
+
+  <section id="projects-section">
+  <div id="projects">
+    <div class="projectBox" style="display:none;">پروژه 1</div>
+    <div class="projectBox" style="display:none;">پروژه 2</div>
+    <div class="projectBox" style="display:none;">پروژه 3</div>
+    <div class="projectBox" style="display:none;">پروژه 4</div>
+    <div class="projectBox" style="display:none;">پروژه 5</div>
+    <div class="projectBox" style="display:none;">پروژه 6</div>
+    <div class="projectBox" style="display:none;">پروژه 7</div>
+    <div class="projectBox" style="display:none;">پروژه 8</div>
+  </div>
+
+  <div id="loader" style="display:none; text-align:center; margin:20px;">
+    <span>در حال بارگذاری...</span>
+  </div>
+</section>
+
+
+
+<script>
+    const projects = document.querySelectorAll(".projectBox");
+const loader = document.getElementById("loader");
+const projectsSection = document.getElementById("projects-section");
+
+let currentIndex = 0;
+const itemsPerLoad = 2;
+let isLoading = false;
+
+// تابع برای نمایش مرحله‌ای پروژه‌ها
+function showNextProjects() {
+  if (currentIndex >= projects.length) return;
+
+  isLoading = true;
+  loader.style.display = "block";
+
+  setTimeout(() => {
+    for (let i = 0; i < itemsPerLoad && currentIndex < projects.length; i++) {
+      projects[currentIndex].style.display = "block";
+      currentIndex++;
+    }
+    loader.style.display = "none";
+    isLoading = false;
+  }, 1000); // تاخیر ۱ ثانیه برای لودر
+}
+
+// نمایش اولیه 2 پروژه
+showNextProjects();
+
+// اسکرول برای بارگذاری مرحله‌ای بعدی
+window.addEventListener("scroll", () => {
+  const scrollBottom = window.scrollY + window.innerHeight;
+  const sectionBottom = projectsSection.offsetTop + projectsSection.offsetHeight;
+
+  if (!isLoading && scrollBottom >= sectionBottom - 50) {
+    showNextProjects();
+  }
+});
+
+</script>
+</body>
+</html>

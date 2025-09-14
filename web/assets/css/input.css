@@ -1,0 +1,392 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "peyda100";
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-Thin.eot");
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-Thin.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Thin.woff") format("woff"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Thin.woff2") format("woff2"),
+    url("https://cdn.basiscore.net/_fonts/Peyda-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "peyda300";
+  src: url("https://cdn.basiscore.net/_fonts/peydaWeb-light.eot");
+  src: url("https://cdn.basiscore.net/_fonts/peydaWeb-light.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.basiscore.net/_fonts/peydaWeb-light.woff") format("woff"),
+    url("https://cdn.basiscore.net/_fonts/peydaWeb-light.woff2") format("woff2"),
+    url("https://cdn.basiscore.net/_fonts/peyda-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "peyda400";
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-Regular.eot");
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Regular.woff") format("woff"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Regular.woff2")
+      format("woff2"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Regular.ttf")
+      format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "peyda500";
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-Medium.eot");
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Medium.woff") format("woff"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Medium.woff2")
+      format("woff2"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Medium.ttf")
+      format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "peyda600";
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-SemiBold.eot");
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-SemiBold.woff")
+      format("woff"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-SemiBold.woff2")
+      format("woff2"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-SemiBold.ttf")
+      format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "peyda700";
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-Bold.eot");
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Bold.woff") format("woff"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Bold.woff2") format("woff2"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "peyda900";
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-Black.eot");
+  src: url("https://cdn.basiscore.net/_fonts/PeydaWeb-Black.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Black.woff") format("woff"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Black.woff2") format("woff2"),
+    url("https://cdn.basiscore.net/_fonts/PeydaWeb-Black.ttf")
+      format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "iranyekan500";
+  src: url("https://cdn.basiscore.net/_fonts/iranyekanwebmediumfanum.eot");
+  src: url("https://cdn.basiscore.net/_fonts/iranyekanwebmediumfanum.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.basiscore.net/_fonts/iranyekanwebmediumfanum.woff")
+      format("woff"),
+    url("https://cdn.basiscore.net/_fonts/iranyekanwebmediumfanum.woff2")
+      format("woff2"),
+    url("https://cdn.basiscore.net/_fonts/iranyekanwebmediumfanum.ttf")
+      format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-peyda900: "peyda900" !important;
+  --font-peyda700: "peyda700" !important;
+  --font-peyda600: "peyda600" !important;
+  --font-peyda500: "peyda500" !important;
+  --font-peyda400: "peyda400" !important;
+  --font-peyda300: "peyda300" !important;
+  --font-peyda100: "peyda100" !important;
+  --font-iranyekan500: "iranyekan500" !important;
+
+  --color-mainBlack: #151616;
+  --color-mainBlack2: #282828;
+  --color-mainYellow: #fdc900;
+  --color-lightt: #d9d9d9;
+  --color-grayy: #1e1e1e;
+  --spacing-90p: 90%;
+  --spacing-85p: 85%;
+  --spacing-80p: 80%;
+}
+
+@media (min-width: 1600px) {
+  .homePage .section1 .nextMainSlide {
+    right: calc(((100vw - 1244px) / 2));
+  }
+  .homePage .section1 .mainPagination,
+  .homePage .section1 .prevMainSlide {
+    left: calc(((100vw - 1244px) / 2));
+  }
+  .projectList .section2 .paragraph,
+  .projectList .section2 .title h2 {
+    padding-right: calc(((100vw - 1244px) / 2));
+  }
+}
+
+@media (max-width: 1599px) {
+  .projectList .section2 .paragraph,
+  .projectList .section2 .title h2 {
+    padding-right: 7.5vw;
+  }
+
+  .homePage .section1 .mainPagination,
+  .homePage .section1 .prevMainSlide {
+    left: 7.5vw;
+  }
+  .homePage .section1 .nextMainSlide {
+    right: 7.5vw;
+  }
+}
+
+.homePage .section1 .mainPagination .swiper-pagination-bullet{
+width: 11px;
+height: 11px;
+opacity: 100;
+transition: 0.5s;
+background: #D9D9D9;
+border: 0.25px solid #fdc900;
+}
+.homePage .section1 .mainPagination  .swiper-pagination-bullet-active{
+width: 14px;
+height: 14px;
+background: #fdc900;
+}
+.loaderList {
+  width: 45px;
+  aspect-ratio: 1;
+  --c: no-repeat
+    linear-gradient(
+      #fdc900 calc(50% - 10px),
+      #0000 0 calc(50% + 10px),
+      #fdc900 0
+    );
+  background: var(--c) 0% 100%, var(--c) 50% 100%, var(--c) 100% 100%;
+  background-size: 20% calc(200% + 20px);
+  animation: l4 1s infinite linear;
+}
+
+@keyframes l4 {
+  33% {
+    background-position: 0% 50%, 50% 100%, 100% 100%;
+  }
+  50% {
+    background-position: 0% 0%, 50% 50%, 100% 100%;
+  }
+  66% {
+    background-position: 0% 0%, 50% 0%, 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%, 50% 0%, 100% 0%;
+  }
+}
+
+.openBtn {
+  border: none;
+  cursor: pointer;
+}
+
+.popupOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background: #0000004d;
+  backdrop-filter: blur(11.100000381469727px);
+}
+
+.plyr__control--overlaid {
+  background-color: #fdc900;
+}
+
+.plyr--full-ui input[type="range"] {
+  color: #fc0d1c;
+}
+
+.plyr--video .plyr__control:focus-visible,
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded="true"] {
+  background-color: #fdc900;
+}
+
+.popupContent {
+  position: relative;
+  width: 80%;
+  max-width: 856px;
+}
+
+.closeBtn {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 1001;
+  width: 85%;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  top: 72px;
+  margin: 0 auto;
+}
+
+.plyr__controls__item.plyr__progress__container {
+  position: absolute;
+  width: 95%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-left: auto !important;
+  bottom: 45px;
+}
+
+.plyr--video .plyr__controls {
+  justify-content: left;
+}
+.w-85p {
+  max-width: 1245px;
+}
+
+.webkitFull {
+  height: 100%;
+  height: -webkit-fill-available;
+  height: stretch;
+  height: fill-available;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: white;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #fdc900;
+}
+
+.listScrollTop {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.listScrollTop.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scrollTop {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.scrollTop.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scrollOpacity.visibleOpacity {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scrollOpacity {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.projectList .section1 .absolute .para p .line {
+  overflow: hidden;
+}
+.projectList .section1 .absolute .para p .line .word {
+  transition: 1s;
+  transform: translateY(100%);
+}
+
+.commentsPagination .swiper-pagination-bullet {
+  width: 11px;
+  height: 11px;
+  opacity: 100 !important;
+  transition: 0.5s ease;
+  background-color: #d9d9d9;
+}
+.commentsPagination .swiper-pagination-bullet-active {
+  background-color: #fdc900;
+  width: 14px;
+  height: 14px;
+}
+
+/* میتونی اینو داخل global CSS بذاری */
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.zoomIn {
+  animation: zoomIn 8s ease forwards;
+  transform-origin: left top;
+}
+
+
+
+
+.c-scrolldown {
+  width: 1px;
+  height: 32px;
+
+  margin: 0 auto;
+  overflow: hidden;
+}
+.c-scrolldown .c-line {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(to bottom, white 50%, rgba(255, 255, 255, 0) 50%);
+  background-position: 0 -32px;
+  background-size: 100% 200%;
+animation: scrolldown 2.2s cubic-bezier(0.30, 0, 0.3, 1) forwards infinite;
+}
+
+@keyframes scrolldown {
+  0% {
+    background-position: 0 -32px;
+  }
+  75% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 32px;
+  }
+}

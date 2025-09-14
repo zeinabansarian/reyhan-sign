@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Popup Video with Plyr</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .openBtn {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+            border-radius: 6px;
+        }
+
+        .popupOverlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            background: #0000004D;
+            backdrop-filter: blur(11.100000381469727px);
+        }
+
+        .plyr__control--overlaid {
+            background-color: #FDC900;
+        }
+
+        .plyr--full-ui input[type=range] {
+            color: #FC0D1C;
+        }
+
+        .plyr--video .plyr__control:focus-visible,
+        .plyr--video .plyr__control:hover,
+        .plyr--video .plyr__control[aria-expanded=true] {
+            background-color: #FDC900;
+        }
+
+        .popupContent {
+            position: relative;
+            width: 80%;
+            max-width: 856px;
+        }
+
+        .closeBtn {
+            position: absolute;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            z-index: 1001;
+            width: 85%;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            top: 72px;
+            margin: 0 auto;
+
+        }
+
+
+
+        .plyr__controls__item.plyr__progress__container {
+            position: absolute;
+            width: 95%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            margin-left: auto !important;
+            bottom: 45px;
+        }
+
+        .plyr--video .plyr__controls {
+            justify-content: left;
+        }
+    </style>
+</head>
+
+<body>
+  <button class="openBtn" data-video="video1.mp4">ویدیو ۱</button>
+  <button class="openBtn" data-video="video2.mp4">ویدیو ۲</button>
+  <button class="openBtn" data-video="video3.mp4">ویدیو ۳</button>
+
+    <div class="popupOverlay" id="popup">
+        <button class="closeBtn" id="closePopup">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3.13366 23.0832L0.916992 20.8665L9.78366 11.9998L0.916992 3.13317L3.13366 0.916504L12.0003 9.78317L20.867 0.916504L23.0837 3.13317L14.217 11.9998L23.0837 20.8665L20.867 23.0832L12.0003 14.2165L3.13366 23.0832Z"
+                    fill="#FDC900" />
+            </svg>
+
+        </button>
+        <div class="popupContent">
+            <video id="player" playsinline controls>
+                <source src="../assets/images/mov_bbb.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+     <script>
+    const popup = document.getElementById("popup");
+    const closeBtn = document.getElementById("closePopup");
+    const video = document.getElementById("player");
+
+    // Plyr init
+    const player = new Plyr(video, {
+      controls: [
+        'progress',
+        'play-large',
+        'play', 'current-time', 'duration',
+        'mute', 'volume',
+        'settings',
+        'pip', 'airplay', 'fullscreen'
+      ]
+    });
+
+    // همه دکمه‌ها
+    document.querySelectorAll(".openBtn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const src = btn.getAttribute("data-video");
+        
+        // تغییر سورس ویدیو
+        player.source = {
+          type: 'video',
+          sources: [
+            { src: src, type: 'video/mp4' }
+          ]
+        };
+
+        popup.style.display = "flex";
+      });
+    });
+
+    // بستن
+    function closePopup() {
+      popup.style.display = "none";
+      player.pause();
+      player.currentTime = 0;
+    }
+    closeBtn.addEventListener("click", closePopup);
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) closePopup();
+    });
+  </script>
+</body>
+
+</html>
