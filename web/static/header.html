@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="../assets/css/outputDesk.css">
 </head>
 futuriz
+
 <body class="h-[300vh]" data-target="home">
-    <header class="h-[100px] duration-1000 fixed top-0 w-svw flex items-center justify-center bg-mainBlack" dir="rtl">
+    <header
+        class="h-[100px] z-[1000000000] duration-1000 fixed top-0 w-svw flex items-center justify-center bg-mainBlack"
+        dir="rtl">
         <div class="w-85p h-full mx-auto flex items-center justify-between">
             <div class="right h-full">
                 <ul class="flex gap-x-9 items-center h-full">
@@ -48,20 +51,24 @@ futuriz
                         </a>
 
 
-                        <div class="megaList absolute top-[100px] hidden delay-500 group-hover/LiGrp:block w-fit  bg-mainBlack2/[0.7]">
+                        <div
+                            class="megaList absolute top-[100px] hidden delay-500 group-hover/LiGrp:block w-fit  bg-mainBlack2/[0.7]">
                             <ul>
                                 <li>
-                                    <a href="" class="p-4 border-b border-b-mainYellow text-white whitespace-nowrap flex items-center justify-center font-peyda600 text-base">
+                                    <a href=""
+                                        class="p-4 border-b border-b-mainYellow text-white whitespace-nowrap flex items-center justify-center font-peyda600 text-base">
                                         پروژه های فروشگاه زنجیره ای
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" class="p-4 border-b border-b-mainYellow text-white whitespace-nowrap flex items-center justify-center font-peyda600 text-base">
+                                    <a href=""
+                                        class="p-4 border-b border-b-mainYellow text-white whitespace-nowrap flex items-center justify-center font-peyda600 text-base">
                                         پروژه های بیمارستان و مراکز درمانی
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" class="p-4 border-b border-b-mainYellow text-white whitespace-nowrap flex items-center justify-center font-peyda600 text-base">
+                                    <a href=""
+                                        class="p-4 border-b border-b-mainYellow text-white whitespace-nowrap flex items-center justify-center font-peyda600 text-base">
                                         پروژه های متفرقه
                                     </a>
                                 </li>
@@ -128,9 +135,9 @@ futuriz
                         </a>
                     </li>
                     <li data-liTitle class="group/LiGrp LiGrp h-full shrink-0">
-                        <a href="/" class="h-full flex items-center justify-center">
+                        <div class="h-full searchBtn cursor-pointer flex items-center justify-center">
                             <img src="../assets/images/search.svg" alt="search">
-                        </a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -141,9 +148,49 @@ futuriz
             </div>
         </div>
     </header>
+
+
+
+    <div dir="rtl" class="searchContainer scale-0 duration-1000 [&.activeSearch]:scale-100 h-svh w-svw fixed inset-0 z-[1000] bg-mainBlack2">
+        <div class="w-85p mx-auto relative flex items-center justify-center h-full pt-36">
+
+            <div class="closeSearch absolute top-36 right-0 cursor-pointer">
+
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3.13268 23.0832L0.916016 20.8665L9.78268 11.9998L0.916016 3.13317L3.13268 0.916504L11.9993 9.78317L20.866 0.916504L23.0827 3.13317L14.216 11.9998L23.0827 20.8665L20.866 23.0832L11.9993 14.2165L3.13268 23.0832Z"
+                        fill="#FDC900" />
+                </svg>
+            </div>
+
+
+            <form class="flex h-[68px] border-b border-b-white -translate-y-16 w-85p mx-auto" role="search" id="searchform" action="/search.bc" method="get">
+
+                <input type="search" class="w-full outline-0 border-0 text-white text-lg font-peyda700 placeholder:font-peyda700 placeholder:text-lg placeholder:text-white " name="q" placeholder="جستجو کنید..." />
+
+                <button type="submit" class="cursor-pointer">
+
+                    <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M20.2872 20.732C15.5653 24.3918 8.65347 24.1038 4.2763 19.8678C-0.420227 15.3228 -0.420227 7.95381 4.2763 3.40878C8.97284 -1.13626 16.5874 -1.13626 21.284 3.40878C25.6611 7.64473 25.9588 14.3336 22.1769 18.9032L31.3625 27.7925C31.8844 28.2975 31.8844 29.1162 31.3625 29.6212C30.8407 30.1262 29.9946 30.1262 29.4728 29.6212L20.2872 20.732ZM6.16604 18.039C2.51319 14.504 2.51319 8.77258 6.16604 5.23756C9.8189 1.70253 15.7414 1.70253 19.3942 5.23756C23.0444 8.76999 23.0471 14.4956 19.4023 18.0312C19.3996 18.0338 19.3969 18.0364 19.3942 18.039C19.3915 18.0416 19.3888 18.0442 19.3862 18.0468C15.7327 21.574 9.81622 21.5714 6.16604 18.039Z"
+                            fill="white" />
+                    </svg>
+
+
+                </button>
+            </form>
+
+
+
+
+        </div>
+    </div>
+
+
 </body>
 
 
 
 <script src="../assets/js/header.js"></script>
+
 </html>

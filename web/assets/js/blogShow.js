@@ -33,7 +33,10 @@ const relProject = new Swiper('.relProject', {
   // Optional parameters
   loop: true,
   slidesPerView: 4,
-
+  autoplay: {
+    delay: 2000,   // 3 ثانیه بین هر اسلاید
+    disableOnInteraction: false, // مهم: وقتی درگ شد هم اتوپلی ادامه پیدا کند
+  },
 speed:1500,
   spaceBetween: 10,
 

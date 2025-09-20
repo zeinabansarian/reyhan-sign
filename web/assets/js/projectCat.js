@@ -54,7 +54,10 @@ const commentsSlider = new Swiper(".commentsSlider", {
 
   speed: 1500,
   spaceBetween: 54,
-
+ autoplay: {
+    delay: 2000,   // 3 ثانیه بین هر اسلاید
+    disableOnInteraction: false, // مهم: وقتی درگ شد هم اتوپلی ادامه پیدا کند
+  },
   pagination: {
     el: ".commentsPagination",
     clickable: true,
@@ -227,4 +230,56 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".commentsSlider .swiper-slide");
+  const popup = document.getElementById("commentPopup");
+  const popupContent = document.getElementById("commentPopupContent");
+  const closeBtn = document.getElementById("closeCommentPopup");
+const closeMore  = popup.querySelector(".closeMore")
+  slides.forEach(slide => {
+    const para = slide.querySelector(".para p");
+    const img = slide.querySelector(".imgS img");
+    const title = slide.querySelector("h5");
+    const moreBtn = slide.querySelector("button");
+
+    // بررسی بیشتر از ۴ خط
+    const lineHeight = parseInt(window.getComputedStyle(para).lineHeight, 10);
+    const lines = Math.round(para.scrollHeight / lineHeight);
+    if (lines <= 4) {
+      moreBtn.style.display = "none";
+    }
+
+    // باز کردن پاپ‌آپ و جایگزین اطلاعات
+    moreBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // جایگزین اطلاعات داخل پاپ‌آپ
+      popup.querySelector(".imgS img").src = img.src;
+      popup.querySelector(".imgS img").alt = img.alt;
+      popup.querySelector("h5").innerHTML = title.innerHTML;
+      popupContent.textContent = para.textContent;
+
+      // نمایش پاپ‌آپ
+      popup.style.display="flex"
+    });
+  });
+
+  // بستن پاپ‌آپ با دکمه ضربدر
+  closeBtn.addEventListener("click", () => {
+    popup.style.display="none"
+  });
+  closeMore.addEventListener("click", () => {
+    popup.style.display="none"
+  });
+
+  // بستن پاپ‌آپ با دکمه "کمتر"
+  popup.querySelector("button").addEventListener("click", () => {
+    popup.classList.add("hidden");
+    popup.classList.remove("flex");
+  });
 });

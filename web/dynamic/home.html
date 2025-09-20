@@ -1,0 +1,432 @@
+<basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="2382693">
+    <member type="list" name="homePageBanner" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2382694">
+    <member type="view" name="homepage-aboutus" />
+</basis>
+<basis core="dbsource" source="media" name="db" lid="1" sourcemid="1" usedforid="2382694">
+    <member type="list" name="homepage-video" />
+</basis>
+
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="19" catid="217413">
+    <member type="list" link="project.bc" name="homepage-default" perpage="50" size="315x200" propertyid="14202" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="19">
+    <member request="cat" type="tree" name="homepage-projects" parentid="217413" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2382706">
+    <member type="view" name="homepage-comments" />
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reyhan Sign</title>
+
+    <meta name="description" content="Reyhan Sign home page">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <basis core="call" file="style.inc" />
+</head>
+
+<body>
+    <main class="homePage overflow-x-hidden bg-mainBlack2" dir="rtl">
+
+        <basis core="call" file="header.inc" />
+        <section class="section1 mt-[100px] relative">
+            <div class="swiper mainSlider relative">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+
+                    <basis core="print" datamembername="db.homePageBanner">
+
+                        <face filter="ord=1">
+                            <div class="swiper-slide !h-full">
+                                <div
+                                    class="imgS h-full overflow-hidden zoomIn relative after:absolute after:inset-0 after:bg-[linear-gradient(180deg,rgba(0,0,0,0)_80%,rgba(0,0,0,0.35)_100%),linear-gradient(0deg,rgba(0,0,0,0.05),rgba(0,0,0,0.05))]">
+
+                                    <img class="w-full h-full object-cover" src="[##cms.cms.cdn##]/@largeIMG"
+                                        alt="@name">
+                                </div>
+                            </div>
+
+                        </face>
+                    </basis>
+
+
+                </div>
+
+                <div class="nextMainSlide absolute top-[calc(50%-18.5px)] cursor-pointer z-10">
+                    <svg width="21" height="37" viewBox="0 0 21 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0.83874 0.855557C1.95706 -0.285186 3.77021 -0.285186 4.88853 0.855557L20.1613 16.4345C21.2796 17.5752 21.2796 19.4248 20.1613 20.5655L4.88853 36.1444C3.77021 37.2852 1.95706 37.2852 0.83874 36.1444C-0.27958 35.0037 -0.27958 33.1542 0.83874 32.0134L14.0866 18.5L0.83874 4.98655C-0.27958 3.84581 -0.27958 1.9963 0.83874 0.855557Z"
+                            fill="#FDC900" />
+                    </svg>
+
+                </div>
+                <div class="prevMainSlide absolute top-[calc(50%-18.5px)] cursor-pointer z-10">
+                    <svg width="21" height="37" viewBox="0 0 21 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M20.1613 36.1444C19.0429 37.2852 17.2298 37.2852 16.1115 36.1444L0.838741 20.5655C-0.279578 19.4248 -0.279577 17.5752 0.838741 16.4345L16.1115 0.85556C17.2298 -0.285183 19.0429 -0.285183 20.1613 0.85556C21.2796 1.9963 21.2796 3.84581 20.1613 4.98655L6.91343 18.5L20.1613 32.0135C21.2796 33.1542 21.2796 35.0037 20.1613 36.1444Z"
+                            fill="#FDC900" />
+                    </svg>
+
+
+                </div>
+
+                <div class="mainPagination justify-end w-fit absolute z-10 flex items-center !bottom-14"></div>
+            </div>
+
+
+            <div class="absolute w-fit text-center z-10 left-0 right-0 bottom-5 mx-auto">
+                <span class="uppercase text-base text-white font-peyda100" style="letter-spacing: 4px;">
+                    SCROLL DOWM
+                </span>
+                <div class="l-section-top">
+                    <div class="c-scrolldown bg-mainYellow/[0.29] mx-auto">
+
+                        <div class="c-line"></div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <a href="/indexed-project.bc"
+                class="font-peyda600 absolute z-10 bottom-9 duration-500 hover:shadow-[0_0_8.6px_0_#FDC90038] hover:bg-[#FBD852] linkkk text-base text-mainBlack2 w-[162px] h-11 rounded-[32px] flex items-center justify-center bg-mainYellow">
+                مشاهده
+            </a>
+
+        </section>
+        <section class="section2 mb-24 relative">
+            <div class="imgS w-full h-full absolute inset-0 z-0">
+                <img class="w-full h-full object-cover" src="[##cms.cms.cdn##]/images/bgHome.jpg" alt="">
+            </div>
+
+            <div class="bg-mainBlack/[0.8] w-full h-full py-16 relative z-10">
+                <div class="w-85p mx-auto">
+                    <h1 class="font-peyda900 text-3xl mb-3 text-mainYellow">
+                        درباره ما
+                    </h1>
+
+                    <basis core="print" datamembername="db.homepage-aboutus">
+
+                        <face filter="prpID=7244">
+                            <div class="para font-peyda400 text-xl text-white text-justify mb-7 ">
+                                @largetext
+                            </div>
+
+                        </face>
+                    </basis>
+
+                    <div class="flex gap-x-10">
+                        <div class="rightSide w-[37%] shrink-0 grid grid-cols-2 gap-6">
+
+                            <basis core="print" datamembername="db.homepage-aboutus">
+
+                                <face filter="TypeID=250">
+                                    <div class="box px-7 text-center py-4 bg-white/[0.1] rounded-[5px]">
+                                        <span data-counter="@largetext"
+                                            class="font-peyda400 counter mb-5 block text-mainYellow text-[24px]">
+                                            +0
+                                        </span>
+                                        <h5 class="font-peyda900 text-white text-center text-base">
+                                            @text
+                                        </h5>
+                                    </div>
+
+                                </face>
+                            </basis>
+
+
+                        </div>
+                        <div class="leftSide w-[63%]">
+                            <basis core="print" datamembername="db.homepage-video">
+
+                                <face>
+                                    <div data-video="[##cms.cms.cdn##]/@largeIMG"
+                                        class="imgS cursor-pointer openBtn rounded-[10px] overflow-hidden relative flex items-center justify-center">
+                                        <!-- <img src="[##cms.cms.cdn##]/images/Mask group (1).png" alt="@name"> -->
+                                        <video class="w-full" src="[##cms.cms.cdn##]/@largeIMG"></video>
+                                        <div class="absolute">
+                                            <img src="[##cms.cms.cdn##]/images/Isolation_Mode.svg" alt="play">
+                                        </div>
+                                    </div>
+
+                                </face>
+                            </basis>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section3 mb-24 w-85p mx-auto">
+
+            <basis core="print" datamembername="db.homepage-projects">
+
+                <face>
+                    <div class="flex mb-9 items-center justify-between">
+
+                        <h2 class=" font-peyda900 text-[32px] text-mainYellow">
+                            پروژه‌های شاخص
+                        </h2>
+
+
+
+                        <a href="/indexed-project.bc"
+                            class="font-peyda600 duration-500 hover:shadow-[0_0_8.6px_0_#FDC90038] hover:bg-[#FBD852] text-base text-mainBlack2 w-[162px] h-11 rounded-[32px] flex items-center justify-center bg-mainYellow">
+                            مشاهده پروژه ها
+                        </a>
+                    </div>
+                    <div class="para font-peyda400 text-xl text-justify text-white mb-16">
+                        <p>
+                            @urldescription
+                        </p>
+                    </div>
+
+                </face>
+            </basis>
+
+            <basis core="print" datamembername="db.homepage-default">
+                <layout>
+
+
+                    <div class="relative">
+
+                        <div class="nextrelProject absolute cursor-pointer right-0 top-[82px]">
+                            <svg width="22" height="37" viewBox="0 0 22 37" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.07435 0.855557C2.20733 -0.285186 4.04427 -0.285186 5.17725 0.855557L20.6503 16.4345C21.7833 17.5752 21.7833 19.4248 20.6503 20.5655L5.17725 36.1444C4.04427 37.2852 2.20733 37.2852 1.07435 36.1444C-0.0586371 35.0037 -0.0586371 33.1542 1.07435 32.0134L14.4959 18.5L1.07435 4.98655C-0.0586371 3.84581 -0.0586371 1.9963 1.07435 0.855557Z"
+                                    fill="#FDC900" />
+                            </svg>
+
+                        </div>
+                        <div class="prevrelProject absolute cursor-pointer left-0 top-[82px]">
+                            <svg width="22" height="37" viewBox="0 0 22 37" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M20.9257 36.1444C19.7927 37.2852 17.9557 37.2852 16.8227 36.1444L1.34972 20.5655C0.216734 19.4248 0.216734 17.5752 1.34972 16.4345L16.8227 0.855561C17.9557 -0.285183 19.7927 -0.285183 20.9256 0.85556C22.0586 1.9963 22.0586 3.84581 20.9256 4.98655L7.50408 18.5L20.9257 32.0135C22.0586 33.1542 22.0586 35.0037 20.9257 36.1444Z"
+                                    fill="#FDC900" />
+                            </svg>
+
+                        </div>
+                        <div class="swiper relProject !pt-3 !pb-3 mx-auto !w-85p">
+
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+
+                                @child
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </layout>
+
+                <face>
+                    <div class="swiper-slide group/Slider px-4">
+                        <a href="/@link" class="relative">
+                            <div class="imgS relative overflow-hidden mb-10 rounded-[10px]"
+                                style="box-shadow: -13px 10px 30px 0px #00000080;">
+                                <!-- <div
+                                                class="over opacity-0 group-hover/Slider:opacity-100 duration-500 flex flex-col justify-center px-5 bg-mainBlack/[0.9] absolute inset-0">
+                                                <div class="">
+        
+                                                    <p class="font-peyda700 text-mainYellow text-[32px]">
+        
+                                                        مساله:
+                                                    </p>
+                                                </div>
+                                                <div class="">
+        
+                                                    <p class="font-peyda700 text-mainYellow text-[32px]">
+        
+        
+                                                        راه حل:
+                                                    </p>
+                                                </div>
+                                            </div> -->
+                                <img class="w-full" src="[##cms.cms.cdn##]/@00315X00200prp" alt="@title">
+                            </div>
+                            <h5 class="text-center font-peyda700 text-mainYellow text-2xl">
+                                @title
+                            </h5>
+                        </a>
+                    </div>
+                </face>
+            </basis>
+        </section>
+
+
+
+        <basis core="print" datamembername="db.homepage-comments">
+            <layout>
+                <section class="section4 relative mb-24 pb-11 w-85p mx-auto">
+                    <h3 class="mb-10 font-peyda900 text-[32px] text-mainYellow">
+                        نظرات مشتریان
+                    </h3>
+
+                    <div class="swiper commentsSlider ">
+
+
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+
+                            @child
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="commentsPagination !bottom-0 absolute mt-9 flex justify-center items-center">
+
+                    </div>
+
+
+                </section>
+
+            </layout>
+
+            <face>
+                <div class="swiper-slide py-3.5 px-4 bg-mainBlack rounded-[20px]">
+                    <!-- <div class="imgS flex items-center justify-center mb-2.5">
+                        <img src="[##cms.cms.cdn##]/images/1045962624852001B.png" alt="@title">
+                    </div> -->
+                    <h5 class="text-center font-peyda700 text-xl mb-2.5 text-white">
+                        @text
+                    </h5>
+
+                    <div class="para line-clamp-4 mb-2.5 font-peyda400 text-xl text-white text-center ">
+                        @largetext
+                    </div>
+                    <button
+                        class="flex mx-auto cursor-pointer items-center justify-center gap-x-1.5 text-base text-white font-peyda300">
+                        <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.9656 7.06859H8.03435V0.713632C8.03435 0.370121 7.82061 0.141113 7.5 0.141113C7.17939 0.141113 6.96565 0.370121 6.96565 0.713632V7.06859H1.03435C0.71374 7.06859 0.5 7.2976 0.5 7.64111C0.5 7.98463 0.71374 8.21363 1.03435 8.21363H6.96565V14.5686C6.96565 14.9121 7.17939 15.1411 7.5 15.1411C7.82061 15.1411 8.03435 14.9121 8.03435 14.5686V8.21363H13.9656C14.2863 8.21363 14.5 7.98463 14.5 7.64111C14.5 7.2976 14.2863 7.06859 13.9656 7.06859Z"
+                                fill="white" />
+                        </svg>
+                        بیشتر
+                    </button>
+                </div>
+            </face>
+        </basis>
+
+
+        <!-- 
+        <section class="section5 mb-24 w-85p  mx-auto">
+
+            <h3 class="text-mainYellow mb-24 font-peyda700 text-3xl">
+                مشتریان
+            </h3>
+            <div class="swiper mySwiperlogo !pb-14 h-[545px]">
+
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide  !w-[103px]">
+                        <a href="" aria-label="@name" class="flex items-center justify-center">
+                            <img src="[##cms.cms.cdn##]/images/logos/Mask group-1.png" alt="@name">
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </section> -->
+
+
+        <basis core="call" file="footer.inc" />
+
+        <div class="popupOverlay" id="popup"  style="z-index: 10000000000;">
+            <button class="closeBtn" id="closePopup">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3.13366 23.0832L0.916992 20.8665L9.78366 11.9998L0.916992 3.13317L3.13366 0.916504L12.0003 9.78317L20.867 0.916504L23.0837 3.13317L14.217 11.9998L23.0837 20.8665L20.867 23.0832L12.0003 14.2165L3.13366 23.0832Z"
+                        fill="#FDC900" />
+                </svg>
+
+            </button>
+            <div class="popupContent">
+
+                <basis core="print" datamembername="db.homepage-video">
+
+                    <face>
+
+                        <span class="videosrc" style="display: none;">/@largeIMG.mp4</span>
+
+                        <video id="player" src="/@largeIMG.mp4"></video>
+
+                    </face>
+                </basis>
+            </div>
+        </div>
+        <div class="popupOverlay" id="commentPopup" style="z-index: 10000000000;">
+            <button class="closeCommentPopup absolute cursor-pointer top-16" id="closeCommentPopup">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3.13366 23.0832L0.916992 20.8665L9.78366 11.9998L0.916992 3.13317L3.13366 0.916504L12.0003 9.78317L20.867 0.916504L23.0837 3.13317L14.217 11.9998L23.0837 20.8665L20.867 23.0832L12.0003 14.2165L3.13366 23.0832Z"
+                        fill="#FDC900" />
+                </svg>
+
+            </button>
+            <div class="popupContent" style="width: fit-content;">
+                <div
+                    class="w-[270px] max-h-[461px] py-3.5 px-4 bg-mainBlack/[0.2] mx-auto overflow-y-auto rounded-[20px]">
+                    <div class="imgS flex items-center justify-center mb-2.5">
+                        <img src="[##cms.cms.cdn##]/images/1045962624852001B.png" alt="@title">
+                    </div>
+                    <h5 class="text-center font-peyda700 text-xl mb-2.5 text-white">
+                        آقای . . .
+
+
+                        <br>
+                        مدیرعامل
+                    </h5>
+
+                    <div id="commentPopupContent"
+                        class="para mb-2.5 line-clamp-4 font-peyda400 text-xl text-white text-center "></div>
+
+
+                    <button
+                        class="flex closeMore items-center mx-auto cursor-pointer justify-center gap-x-1.5 text-base text-white font-peyda300">
+                        <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.9656 7.06859H8.03435V0.713632C8.03435 0.370121 7.82061 0.141113 7.5 0.141113C7.17939 0.141113 6.96565 0.370121 6.96565 0.713632V7.06859H1.03435C0.71374 7.06859 0.5 7.2976 0.5 7.64111C0.5 7.98463 0.71374 8.21363 1.03435 8.21363H6.96565V14.5686C6.96565 14.9121 7.17939 15.1411 7.5 15.1411C7.82061 15.1411 8.03435 14.9121 8.03435 14.5686V8.21363H13.9656C14.2863 8.21363 14.5 7.98463 14.5 7.64111C14.5 7.2976 14.2863 7.06859 13.9656 7.06859Z"
+                                fill="white" />
+                        </svg>
+                        کمتر
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+    </main>
+
+
+    <basis core="call" file="script.inc" />
+    <script src="[##cms.cms.cdn##]/js/newD/swiper-bundle7.4.1.min.js"></script>
+
+    <script src="[##cms.cms.cdn##]/js/newD/plyr.polyfilled.js"></script>
+
+    <script src="[##cms.cms.cdn##]/js/newD/home.js"></script>
+</body>
+
+</html>

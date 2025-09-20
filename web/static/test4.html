@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Justified Gallery Example</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    #gallery img {
+      cursor: default; /* چون نمی‌خوای باز بشه */
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    #gallery img.lazyloaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .jg-entry {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="gallery">
+    <a><img src="../assets/images/product/01.jpg" alt=""></a>
+    <a><img src="../assets/images/product/02.jpg" alt=""></a>
+    <a><img src="../assets/images/product/03.jpg" alt=""></a>
+    <a><img src="../assets/images/product/04.jpg" alt=""></a>
+    <a><img src="../assets/images/product/05.jpg" alt=""></a>
+    <a><img src="../assets/images/product/06.jpg" alt=""></a>
+    <a><img src="../assets/images/product/07.jpg" alt=""></a>
+    <a><img src="../assets/images/product/08.jpg" alt=""></a>
+    <a><img src="../assets/images/product/09.jpg" alt=""></a>
+    <a><img src="../assets/images/product/10.jpg" alt=""></a>
+    <a><img src="../assets/images/product/11.jpg" alt=""></a>
+    <a><img src="../assets/images/product/12.jpg" alt=""></a>
+    <a><img src="../assets/images/product/13.jpg" alt=""></a>
+    <a><img src="../assets/images/product/14.jpg" alt=""></a>
+    <a><img src="../assets/images/product/15.jpg" alt=""></a>
+    <a><img src="../assets/images/product/16.jpg" alt=""></a>
+    <a><img src="../assets/images/product/17.jpg" alt=""></a>
+    <a><img src="../assets/images/product/18.jpg" alt=""></a>
+    <a><img src="../assets/images/product/19.jpg" alt=""></a>
+    <a><img src="../assets/images/product/20.jpg" alt=""></a>
+    <a><img src="../assets/images/product/21.jpg" alt=""></a>
+    <a><img src="../assets/images/product/22.jpg" alt=""></a>
+    <a><img src="../assets/images/product/23.jpg" alt=""></a>
+    <a><img src="../assets/images/product/24.jpg" alt=""></a>
+    <a><img src="../assets/images/product/25.jpg" alt=""></a>
+    <a><img src="../assets/images/product/26.jpg" alt=""></a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // مقدار دهی اولیه برای گالری
+      $("#gallery").justifiedGallery({
+        rowHeight: 300,
+        maxRowHeight: 400,
+        margins: 25,
+        captions: false,
+        lastRow: 'nojustify'
+      });
+      
+      // ایجاد Intersection Observer برای تشخیص عناصری که در viewport هستند
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // اضافه کردن کلاس برای انیمیشن وقتی المان در viewport است
+            const img = entry.target;
+            setTimeout(() => {
+              img.classList.add('lazyloaded');
+            }, 100);
+            observer.unobserve(img);
+          }
+        });
+      }, observerOptions);
+      
+      // مشاهده همه تصاویر پس از لود گالری
+      setTimeout(() => {
+        document.querySelectorAll('#gallery img').forEach(img => {
+          observer.observe(img);
+        });
+      }, 500);
+    });
+  
+  
+  
+  
+  </script>
+</body>
+</html>

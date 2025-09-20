@@ -26,7 +26,6 @@ window.addEventListener('resize', setRightHeight);
     const player = new Plyr(video, {
       controls: [
         'progress',
-        'play-large',
         'play', 'current-time', 'duration',
         'mute', 'volume',
         'settings',
